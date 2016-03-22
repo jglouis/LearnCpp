@@ -3,6 +3,7 @@
 class Shape {
 public:
 	virtual const int area() = 0;
+	virtual ~Shape() {};
 };
 
 class Rectangle : public Shape {
