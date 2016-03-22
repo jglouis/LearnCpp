@@ -8,13 +8,13 @@ public:
 class Rectangle : public Shape {
 	int width, height;
 public:
-	Rectangle(int w, int h);
-	inline int area() { return width*height; };
+	Rectangle(int w, int h) : width(w), height(h) {};
+	int area() { return width * height; };
 };
 
 class Triangle : public Shape {
 	int base, height;
 public:
-	Triangle(int b, int h);
-	inline int area() { return base * height / 2; };
+	Triangle(int b, int h) : base(b), height(h) {};
+	int area() { return base * height / 2; };
 };
