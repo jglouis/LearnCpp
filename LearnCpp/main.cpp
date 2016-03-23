@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "shape.h"
+#include "container.h"
 
 int main() {
 	Rectangle rect(3, 4);
@@ -10,9 +11,13 @@ int main() {
 	shapes[0] = &rect;
 	shapes[1] = &triang;
 
+	Pair<Shape*> pair(&rect, &triang);
 
 	std::cout << "rect area: " << shapes[0]->area() << std::endl;
 	std::cout << "triang area: " << shapes[1]->area() << std::endl;
+
+	std::cout << "rect area: " << pair.get_first()->area() << std::endl;
+	std::cout << "triang area: " << pair.get_second()->area() << std::endl;
 
 	return 0;
 }
