@@ -24,3 +24,13 @@ Rectangle& out_of_scope_return_value(){
 	Rectangle & b = a;
 	return b;
 }
+
+// Example with pointer on the heap
+Shape** get_shapes() {
+	Shape** shapes = new Shape*[2];
+	Rectangle* rect = new Rectangle(1, 2);
+	Triangle* triang = new Triangle(3, 4);
+	shapes[0] = rect;
+	shapes[1] = triang;
+	return shapes;
+}

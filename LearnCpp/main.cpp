@@ -31,8 +31,17 @@ int main() {
 	int i = 5;
 	std::cout << "factorial of 5 is: " << fact(i) << std::endl;
 
-	Rectangle& bad = out_of_scope_return_value();
-	std::cout << bad.area() << std::endl;
+	//Rectangle& bad = out_of_scope_return_value();
+	//std::cout << bad.area() << std::endl;
+	
+	std::cout << "get_shapes()..." << std::endl;
+	Shape** shapes2 = get_shapes();
+	for (int n = 0; n < 2; n++) {
+		std::cout << "area " << shapes2[n]->area() << std::endl;
+		delete shapes2[n];
+	}
+	delete[] shapes2;
+	
 
 	return 0;
 }
